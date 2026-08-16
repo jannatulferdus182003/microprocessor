@@ -76,31 +76,36 @@ main proc
     add al, cl 
     mov ch, al 
     
-    
+     
     
     mov ah, 0
     mov dl, 3
     div dl  
-    mov dh, al 
+    mov bl, al 
     
     
-
+    
   
     mov ah, 2
     mov dl, ch
     add dl, 48 
     int 21h
 
+         mov dx,offset avg 
+    mov ah, 09h   
+    int 21h 
+    
     
     mov ah, 2
     mov dl, 10
-    int 21h
+    int 21h 
+    
     mov dl, 13
     int 21h
     
   
     mov ah, 2
-    mov dl, dh
+    mov dl, bl
     add dl, 48
     int 21h
 
